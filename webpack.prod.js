@@ -9,7 +9,7 @@ const glob = require('glob')
 module.exports = {
   mode: 'production',
   entry: {
-    main: './index.js',
+    main: './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -17,7 +17,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'vue/index2.html',
+      template: './public/index.html',
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new MiniCssExtractPlugin(),
