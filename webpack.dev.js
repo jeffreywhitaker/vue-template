@@ -1,5 +1,4 @@
 const path = require('path')
-const Dotenv = require('dotenv-webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -27,7 +26,6 @@ module.exports = {
       template: './public/index.html',
     }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    // new Dotenv(),
     new MiniCssExtractPlugin(),
     new VueLoaderPlugin(),
     new WebpackNotifierPlugin({ alwaysNotify: true }),
@@ -65,7 +63,7 @@ module.exports = {
       // handle less files
       {
         test: /\.less$/,
-        use: ['vue-style-loader', 'css-loader', 'less-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
       // handle png modules (files)
       {

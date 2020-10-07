@@ -56,7 +56,7 @@ module.exports = {
       // handle less files
       {
         test: /\.less$/,
-        use: ['vue-style-loader', 'css-loader', 'less-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
       // handle png modules (files)
       {
