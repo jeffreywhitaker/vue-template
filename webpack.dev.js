@@ -19,6 +19,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
+    open: true,
     contentBase: './dist',
   },
   plugins: [
@@ -35,7 +36,7 @@ module.exports = {
       // handle JS modules (files)
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
