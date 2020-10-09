@@ -28,7 +28,7 @@ module.exports = {
       // handle JS modules (files)
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
@@ -51,7 +51,7 @@ module.exports = {
       // handle css files
       {
         test: /\.css$/,
-        use: ['vue-style-loader', 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       // handle less files
       {
