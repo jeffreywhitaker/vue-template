@@ -30,6 +30,9 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new VueLoaderPlugin(),
     new WebpackNotifierPlugin({ alwaysNotify: true }),
+    new CopyPlugin({
+      patterns: [{ from: './public/img/', to: './public/img' }],
+    }),
   ],
   module: {
     rules: [
@@ -66,15 +69,12 @@ module.exports = {
         test: /\.less$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'],
       },
-      // handle png modules (files)
+      // handle static files
       {
-        test: /\.png$/,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png',
-            },
+            loader: 'file-loader',
           },
         ],
       },
