@@ -13,6 +13,12 @@ Contains:
 
 ## Instructions
 
+Set up:
+
+```(javascript)
+yarn install
+```
+
 Development:
 
 ```(javascript)
