@@ -11,14 +11,15 @@ export default {}
 <style lang="less" scoped>
 .nav {
   display: flex;
-  background: cyan;
+  background: #99D5C9;
 
   a {
     padding: 10px 5px;
     text-decoration: none;
 
-    :hover {
-      background: lightpink;
+    &:hover {
+      background: #3B9180;
+      color: white;
     }
   }
 }
